@@ -519,12 +519,28 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   max-width: var(--content-width);
   margin: 0 auto;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-dim);
   letter-spacing: 0.05em;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal a {
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+  color: var(--text);
 }
 
 /* ─────────────────────────────────────────────

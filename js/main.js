@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────────
    STATE
 ───────────────────────────────────────────── */
-let lang = localStorage.getItem('lang') || 'en';
+let lang = localStorage.getItem('lang') || 'de';
 
 /* ─────────────────────────────────────────────
    NAV SCROLL
@@ -20,13 +20,23 @@ function applyLang(l) {
   localStorage.setItem('lang', l);
 
   document.querySelectorAll('[data-en]').forEach(el => {
-    el.textContent = l === 'de' ? el.dataset.de : el.dataset.en;
+    if (el.children.length === 0) {
+      el.textContent = l === 'de' ? el.dataset.de : el.dataset.en;
+    }
   });
 
   const btn = document.getElementById('langToggle');
   btn.textContent = l === 'de' ? 'DE / EN' : 'EN / DE';
 
   document.documentElement.lang = l === 'de' ? 'de' : 'en';
+
+  // Switch legal blocks if present on this page
+  const enBlock = document.getElementById('en-block');
+  const deBlock = document.getElementById('de-block');
+  if (enBlock && deBlock) {
+    enBlock.style.display = l === 'de' ? 'none' : 'block';
+    deBlock.style.display = l === 'de' ? 'block' : 'none';
+  }
 }
 
 document.getElementById('langToggle').addEventListener('click', () => {
@@ -59,4 +69,5 @@ revealEls.forEach(el => observer.observe(el));
 /* ─────────────────────────────────────────────
    FOOTER YEAR
 ───────────────────────────────────────────── */
-document.querySelector('.footer-year').textContent = new Date().getFullYear();
+const yearEl = document.querySelector('.footer-year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
