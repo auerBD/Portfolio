@@ -230,15 +230,12 @@ ul {
 }
 
 .hero-scroll-hint {
-  position: absolute;
-  bottom: 2rem;
-  left: var(--gutter);
+  margin-top: 3rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-dim);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   opacity: 0;
   animation: fadeUp 0.7s ease forwards 1.1s;
 }

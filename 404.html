@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Seite nicht gefunden — Bence Auer">
+  <meta name="robots" content="noindex, nofollow">
+  <title>404 — Bence Auer</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .not-found {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0 var(--gutter);
+      max-width: var(--content-width);
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .not-found-code {
+      font-size: clamp(6rem, 20vw, 16rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      color: var(--border-hover);
+      position: absolute;
+      top: 30%;
+      left: var(--gutter);
+      transform: translateY(-50%);
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .not-found-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .not-found-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.7s ease forwards 0.1s;
+    }
+
+    .not-found-heading {
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.7s ease forwards 0.25s;
+    }
+
+    .not-found-sub {
+      font-size: 1rem;
+      color: var(--text-mid);
+      max-width: 420px;
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.7s ease forwards 0.4s;
+    }
+
+    .not-found-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.55s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled">
+    <a href="index.html" class="nav-logo">B.</a>
+    <div class="nav-links">
+      <a href="index.html#projects" data-en="Work" data-de="Projekte">Work</a>
+      <a href="index.html#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN / DE</button>
+    </div>
+  </nav>
+
+  <div class="not-found">
+    <span class="not-found-code" aria-hidden="true">404</span>
+    <div class="not-found-content">
+      <p class="not-found-eyebrow" data-en="Page not found" data-de="Seite nicht gefunden">Page not found</p>
+      <h1 class="not-found-heading" data-en="Nothing here." data-de="Hier gibt's nichts.">Nothing here.</h1>
+      <p class="not-found-sub" data-en="The page you're looking for doesn't exist or has been moved." data-de="Die Seite, die du suchst, existiert nicht oder wurde verschoben.">The page you're looking for doesn't exist or has been moved.</p>
+      <div class="not-found-links">
+        <a href="index.html" class="cta" data-en="Back to home" data-de="Zur Startseite">Back to home</a>
+        <a href="index.html#projects" class="link-secondary" data-en="See my work" data-de="Meine Projekte">See my work</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
